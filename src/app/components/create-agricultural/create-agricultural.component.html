@@ -1,0 +1,319 @@
+
+
+<h2 mat-dialog-title>Install Angular</h2>
+<form  [formGroup]="createForm" (ngSubmit)="onSubmit()">
+<mat-dialog-content class="mat-typography" style="width:140vh;">
+  <div class="container">
+    <div class="col">
+       
+        <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>Consignment</mat-label>
+                <input 
+                    matInput 
+                    formControlName="Consignment" 
+                >
+                <div [hidden]="Consignment.valid || Consignment.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!Consignment.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>Warehouse</mat-label>
+            <input 
+                    matInput 
+                    formControlName="Warehouse" 
+                >
+                <div [hidden]="Warehouse.valid || Warehouse.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!Warehouse.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>ClientId</mat-label>
+            <input 
+                    matInput 
+                    formControlName="ClientId" 
+                >
+                <div [hidden]="ClientId.valid || ClientId.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!ClientId.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>DriverName</mat-label>
+                <input 
+                    matInput 
+                    formControlName="DriverName" 
+                >
+                <div [hidden]="DriverName.valid || DriverName.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!DriverName.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>License</mat-label>
+                <input 
+                    matInput 
+                    formControlName="License" 
+                >
+                <div [hidden]="License.valid || License.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!License.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>PlaceIssued</mat-label>
+                <input 
+                    matInput 
+                    formControlName="PlaceIssued" 
+                >
+                <div [hidden]="PlaceIssued.valid || PlaceIssued.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!PlaceIssued.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>TruckPlate</mat-label>
+                <input 
+                    matInput 
+                    formControlName="TruckPlate" 
+                >
+                <div [hidden]="TruckPlate.valid || TruckPlate.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!TruckPlate.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>TrailerPlate</mat-label>
+                <input 
+                    matInput 
+                    formControlName="TrailerPlate" 
+                >
+                <div [hidden]="TrailerPlate.valid || TrailerPlate.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!TrailerPlate.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            
+        </div>
+    <div class="col">
+        <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>VoucherNumber</mat-label>
+                <input 
+                    matInput 
+                    formControlName="VoucherNumber" 
+                >
+                <div [hidden]="VoucherNumber.valid || VoucherNumber.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!VoucherNumber.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+
+        <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>TruckNumberPlomps</mat-label>
+                <input 
+                    matInput 
+                    formControlName="TruckNumberPlomps" 
+                >
+                <div [hidden]="TruckNumberPlomps.valid || TruckNumberPlomps.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!TruckNumberPlomps.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>TrailerNumberPlomps</mat-label>
+                <input 
+                    matInput 
+                    formControlName="TrailerNumberPlomps" 
+                >
+                <div [hidden]="TrailerNumberPlomps.valid || TrailerNumberPlomps.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!TrailerNumberPlomps.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>Region</mat-label>
+                <input 
+                    matInput 
+                    formControlName="Region" 
+                >
+                <div [hidden]="Region.valid || Region.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!Region.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>Zone</mat-label>
+            <input 
+                    matInput 
+                    formControlName="Zone" 
+                >
+                <div [hidden]="Zone.valid || Zone.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!Zone.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>Woreda</mat-label>
+                <input 
+                    matInput 
+                    formControlName="Woreda" 
+                >
+                <div [hidden]="Woreda.valid || Woreda.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!Woreda.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>SpecficArea</mat-label>
+                <input 
+                    matInput 
+                    formControlName="SpecficArea" 
+                >
+                <div [hidden]="SpecficArea.valid || SpecficArea.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!SpecficArea.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>ProductionYear</mat-label>
+                <input 
+                    matInput 
+                    formControlName="ProductionYear" 
+                >
+                <div [hidden]="ProductionYear.valid || ProductionYear.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!ProductionYear.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+
+    </div>
+    <div class="col">
+        <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>NumberOfBags</mat-label>
+            <input 
+                    matInput 
+                    formControlName="NumberOfBags" 
+                >
+                <div [hidden]="NumberOfBags.valid || NumberOfBags.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!NumberOfBags.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>VehicleSize</mat-label>
+            <input 
+                    matInput 
+                    formControlName="VehicleSize" 
+                >
+                <div [hidden]="VehicleSize.valid || VehicleSize.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!VehicleSize.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>EstimatedWeight</mat-label>
+                <input 
+                    matInput 
+                    formControlName="EstimatedWeight" 
+                >
+                <div [hidden]="EstimatedWeight.valid || EstimatedWeight.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!EstimatedWeight.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>GrossWeight</mat-label>
+            <input 
+                    matInput 
+                    formControlName="GrossWeight" 
+                >
+                <div [hidden]="GrossWeight.valid || GrossWeight.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!GrossWeight.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>TicketNumber</mat-label>
+            <input 
+                    matInput 
+                    formControlName="TicketNumber" 
+                >
+                <div [hidden]="TicketNumber.valid || TicketNumber.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!TicketNumber.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+        
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>DateReceived</mat-label>
+            <input 
+                    matInput 
+                    formControlName="DateReceived" 
+                >
+                <div [hidden]="DateReceived.valid || DateReceived.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!DateReceived.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+            <mat-form-field style="width:40vh; padding-left:2vh">
+            <mat-label>Commodity</mat-label>
+                <input 
+                    matInput 
+                    formControlName="Commodity" 
+                >
+                <div [hidden]="Commodity.valid || Commodity.untouched">
+                    <div style="font-size: small; color: red;" [hidden]="!Commodity.hasError('required')">
+                        This is required.
+                    </div>
+                </div>
+            </mat-form-field>
+    </div>
+
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+<button mat-button mat-dialog-close>Cancel</button>
+<button 
+    mat-button 
+    [mat-dialog-close]="true" 
+    cdkFocusInitial 
+    type="submit"
+    [disabled]="!createForm.valid"
+>Submit
+</button>
+</mat-dialog-actions>
+</form>
+

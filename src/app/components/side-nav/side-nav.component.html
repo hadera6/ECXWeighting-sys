@@ -1,0 +1,22 @@
+<div class="nav-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-sidenav-container class="sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+    <mat-sidenav class="side-naver" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" fixedTopGap="0">
+      <mat-toolbar><strong>ECX</strong></mat-toolbar>
+      <mat-nav-list class="naver-list" *ngFor="let nav of fillerNav">
+        <mat-list-item >
+          <a class="naver-list-item" mat-list-item [routerLink]="nav.link" >
+            <span >{{nav.name}}</span>
+          </a>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="main-content">
+      <mat-toolbar>
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
