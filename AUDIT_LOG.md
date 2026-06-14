@@ -9,34 +9,47 @@
 |---|------|--------------------------|-----------------------------------|-----------------------------------|-----------------|
 
 | 
-1 
+ 1 
 | 
-`config.json` 
+ `config.json` 
 | 
-Script crashes with `JSONDecodeError` on startup 
+ Script crashes with `JSONDecodeError` on startup 
 | 
-`config.json` did not exist. `json.load()` on a missing file raises an immediate exception before anything runs 
+ `config.json` did not exist. `json.load()` on a missing file raises an immediate exception before anything runs 
 | 
-Created `config.json` with all required keys: `DATA`, `DATA_PATH`, `MODEL`, `CHANNELS`, `NUM_CLASSES`, `BATCH_SIZE`, `EPOCHS`, `LEARNING_RATE`, `DROP_RATE`, `ACTIVATION` 
+ Created `config.json` with all required keys: `DATA`, `DATA_PATH`, `MODEL`, `CHANNELS`, `NUM_CLASSES`, `BATCH_SIZE`, `EPOCHS`, `LEARNING_RATE`, `DROP_RATE`, `ACTIVATION` 
+| 
+ TBD 
+|
+
+| 
+2 
+| 
+`data.py` 
+| 
+Validation accuracy is inflated — metrics are unreliable 
+| 
+`train_data` was assigned the full array without slicing. Both train and val sets contained the same samples 
+| 
+Sliced `train_data` and `train_labels` to `[:val_start]` to make the two splits mutually exclusive 
 | 
 TBD 
 |
 
 
-| 2 
-| `data.py` 
-| Validation accuracy is inflated — metrics are unreliable 
-| `train_data` was assigned the full array without slicing. Both train and val sets contained the same samples 
-| Sliced `train_data` and `train_labels` to `[:val_start]` to make the two splits mutually exclusive 
-| TBD |
-
-
-| 3 
-| `fit.py` 
-| Loss diverges or produces NaN from the first epoch 
-| `optimizer.zero_grad()` was called after the forward pass. Gradients accumulated across batches making updates mathematically wrong 
-| Moved `zero_grad()` to before the forward pass 
-| TBD |
+| 
+3 
+| 
+`fit.py` 
+| 
+Loss diverges or produces NaN from the first epoch 
+| 
+`optimizer.zero_grad()` was called after the forward pass. Gradients accumulated across batches making updates mathematically wrong 
+|
+Moved `zero_grad()` to before the forward pass 
+| 
+TBD 
+|
 
 
 | 4 
