@@ -8,12 +8,19 @@
 | # | File | How the problem manifests | Mathematical / logical root cause | Structural correction implemented | Git commit hash |
 |---|------|--------------------------|-----------------------------------|-----------------------------------|-----------------|
 
-| 1 
-| `config.json` 
-| Script crashes with `JSONDecodeError` on startup 
-| `config.json` did not exist. `json.load()` on a missing file raises an immediate exception before anything runs 
-| Created `config.json` with all required keys: `DATA`, `DATA_PATH`, `MODEL`, `CHANNELS`, `NUM_CLASSES`, `BATCH_SIZE`, `EPOCHS`, `LEARNING_RATE`, `DROP_RATE`, `ACTIVATION` 
-| TBD |
+| 
+1 
+| 
+`config.json` 
+| 
+Script crashes with `JSONDecodeError` on startup 
+| 
+`config.json` did not exist. `json.load()` on a missing file raises an immediate exception before anything runs 
+| 
+Created `config.json` with all required keys: `DATA`, `DATA_PATH`, `MODEL`, `CHANNELS`, `NUM_CLASSES`, `BATCH_SIZE`, `EPOCHS`, `LEARNING_RATE`, `DROP_RATE`, `ACTIVATION` 
+| 
+TBD 
+|
 
 
 | 2 
