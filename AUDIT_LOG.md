@@ -7,19 +7,20 @@
 | # | File | How the problem manifests | Mathematical / logical root cause | Structural correction implemented | Git commit hash |
 |---|------|--------------------------|-----------------------------------|-----------------------------------|-----------------|
 | 
-1 
+ 1 
 | 
-`config.json`
+ `config.json`
 | 
-Script crashes with `JSONDecodeError` on startup 
+ Script crashes with `JSONDecodeError` on startup 
 | 
-`config.json` did not exist. `json.load()` on a missing file raises an immediate exception before anything runs 
+ `config.json` did not exist. `json.load()` on a missing file raises an immediate exception before anything runs 
 | 
-Created `config.json` with all required keys: `DATA`, `DATA_PATH`, `MODEL`, `CHANNELS`, `NUM_CLASSES`, `BATCH_SIZE`, `EPOCHS`, `LEARNING_RATE`, `DROP_RATE`, `ACTIVATION` 
+ Created `config.json` with all required keys: `DATA`, `DATA_PATH`, `MODEL`, `CHANNELS`, `NUM_CLASSES`, `BATCH_SIZE`, `EPOCHS`, `LEARNING_RATE`, `DROP_RATE`, `ACTIVATION` 
 | 
-TBD 
+ TBD 
 |
-| 2 | `data.py` | Validation accuracy is inflated — metrics are unreliable | `train_data` was assigned the full array without slicing. Both train and val sets contained the same samples | Sliced `train_data` and `train_labels` to `[:val_start]` to make the two splits mutually exclusive | TBD |
+
+ | 2 | `data.py` | Validation accuracy is inflated — metrics are unreliable | `train_data` was assigned the full array without slicing. Both train and val sets contained the same samples | Sliced `train_data` and `train_labels` to `[:val_start]` to make the two splits mutually exclusive | TBD |
 | 3 | `fit.py` | Loss diverges or produces NaN from the first epoch | `optimizer.zero_grad()` was called after the forward pass. Gradients accumulated across batches making updates mathematically wrong | Moved `zero_grad()` to before the forward pass | TBD |
 | 4 | `fit.py` | Python built-in `sum()` is overwritten in `train_one_epoch` | Counter variable was named `sum`, shadowing the Python built-in. Inconsistent with `evaluate()` which used `total` | Renamed variable from `sum` to `total` | TBD |
 | 5 | `models.py` | `RuntimeError: mat1 and mat2 shapes cannot be multiplied` in `AlexNet` and `VGG16` | `nn.Linear(2048, 1024)` was hardcoded. `AlexNet` outputs 192 channels — `2048 / 192 = 10.67`, not a whole number. `VGG16` size was input-resolution dependent. Neither model had `AdaptiveAvgPool2d` unlike `ResNet18` | Added `AdaptiveAvgPool2d((1,1))` to both models. Updated `nn.Linear` input to `192` for `AlexNet` and `512` for `VGG16`. Added `avgpool` call in both `forward` methods | TBD |
